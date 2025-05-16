@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #0078d7;
+            color: white;
+            padding: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 15px;
+            font-size: 18px;
+        }
+        section {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #0078d7;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+        footer {
+            background-color: #0078d7;
+            color: white;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to MIGORI TEACHING AND REFERRAL Hospital</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#appointments">Appointments</a>
+            <a href="#contact">Contact</a>
+            <a href="About Us.html">About us</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>About Our Hospital</h2>
+        <p>Providing quality healthcare services with the best specialists and modern medical facilities.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+           <button><a href="About Us.html">About us</a></button><br>
+           <button><a href="emergency cases.html">casualty/emergency cases</a></button>
+            <li>Outpatient Services</li>
+            <li>Dental services</li>
+            <li>Eye,Nose,Ear treatment</li>
+            <li>laboratories services</li>
+            <li>Radiology services</li>
+            <li>Mortuary serv</li>
+        </ul>
+    </section>
+
+    <section id="appointments">
+        <h2>Book an Appointment</h2>
+        <form id="appointment-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required><br><br>
+
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" required><br><br>
+
+            <label for="doctor">Select Doctor:</label>
+            <select id="doctor">
+                <option>Dr. Smith - Cardiologist</option>
+                <option>Dr. Patel - Neurologist</option>
+                <option>Dr. Lee - Pediatrician</option>
+            </select><br><br>
+
+            <button type="submit">Submit Appointment</button>
+        </form>
+        <p id="confirmation" style="color: green; font-weight: bold;"></p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@migoricountyhospital.or.ke | Phone: +254758721996</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Migori Level 4 Hospital - All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.getElementById("appointment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const date = document.getElementById("date").value;
+            const doctor = document.getElementById("doctor").value;
+            
+            if (name && date && doctor) {
+                document.getElementById("confirmation").innerText = 
+                    `Appointment booked successfully for ${name} with ${doctor} on ${date}.`;
+            } else {
+                document.getElementById("confirmation").innerText = "Please fill in all fields.";
+            }
+        });
+    </script>
+</body>
+</html>
